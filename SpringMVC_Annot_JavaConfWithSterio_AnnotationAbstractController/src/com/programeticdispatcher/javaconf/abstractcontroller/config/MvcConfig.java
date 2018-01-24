@@ -25,6 +25,11 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
    @Override
 	public void configureViewResolvers(ViewResolverRegistry registry) {
 	   System.out.println("inside configureViewResolvers method");
+	   /*registry.jsp("/WEB-INF/jsp/" , ".jsp");
+	    * in this way also we can write it will take two parameters as argument
+	    * one is prefix and another one is suffix so that it will construct the 
+	    * view location to instantiate
+	    * */
 	   registry.jsp().prefix("/WEB-INF/jsp/").suffix(".jsp");
 	}
 }

@@ -14,7 +14,11 @@ import com.programeticdispatcher.javaconf.abstractcontroller.dto.PlansDTO;
 
 @Controller
 public class ViewPlansController {
-	
+	/*you can place the return type as void or Model or Map or ModelMap also in such a case it will identify the
+	 * Logical View Name by taking the help from RequestToViewName implimentation class i.e DefaultRequestToViewName class
+	 * this will return the logical view name from requested url only means plans it will return in case 
+	 * So you can return void also as return type that is the one more component comming from SpringMvc
+	 * */
 	@RequestMapping("/plans.htm")
    public String showPlans(Model model , @RequestParam("provider") String provider) {
 	   System.out.println("inside showPlans method");

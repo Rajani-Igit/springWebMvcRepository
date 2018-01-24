@@ -22,6 +22,8 @@ Parameter Types
 13)HttpSession
 14)@ModelAttribute
 15)BindingResults
+16)ServletRequest
+17)ServletResponse
 
 Return Type :-
 --------------
@@ -47,4 +49,19 @@ Return Type :-
    componennt to it. This is Adopter class follows Adopter design pattern 
    this classes will convert one class or interface compatibility into 
    another class compatability. we may required to write more controllers
-   but one handlerAdopter is wnough to call our controllers
+   but one handlerAdopter is enough to call our controllers
+  
+ ## Aspart of return types you can send any valid spring provided response types
+    void and Map and ModelMap is also we can send response back to RequestMapping
+    HandlerAdopter class but this class will use another component called
+    RequestToViewName this is another component comming from SpringMvc which will helps
+    you in identifying the logical view name. this is interface and have some implementation
+    classes also one of the implementation class is DefaultRequestToView or else
+    you can have your own classes also by implementing this interface.
+    it will identify based on the request with which the url pattern is comming
+    if the url pattern is comming like /home.htm it will remove the forword
+    slash and .htm and places home as logical view name and sends back to the 
+    RequestMappingHandlerMapping class. but this will not be usefull incase if you want to
+    forwird the request to some other page bu you are not returing any name
+    it will construct the name from requested name only ther incorrect results will come
+     
